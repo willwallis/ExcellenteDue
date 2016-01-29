@@ -44,7 +44,7 @@ public class ScanActivity extends ActionBarActivity {
                     .setBarcodeFormats(Barcode.DATA_MATRIX | Barcode.QR_CODE)
                     .build();
     if(!detector.isOperational()){
-        txtView.setText("Could not set up the detector!");
+        txtView.setText(R.string.detector_failure);
         return;
     }
 
