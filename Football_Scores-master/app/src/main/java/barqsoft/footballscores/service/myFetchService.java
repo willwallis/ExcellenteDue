@@ -35,6 +35,7 @@ public class myFetchService extends IntentService
     {
         super("myFetchService");
     }
+    public static final String ACTION_DATA_UPLOADED = "barqsoft.footballscores.app.ACTION_DATA_UPLOADED";
 
     @Override
     protected void onHandleIntent(Intent intent)
@@ -266,6 +267,11 @@ public class myFetchService extends IntentService
                     DatabaseContract.BASE_CONTENT_URI,insert_data);
 
             //Log.v(LOG_TAG,"Succesfully Inserted : " + String.valueOf(inserted_data));
+
+            // Call Widget with intent
+            Intent dataUpdatedIntent = new Intent(ACTION_DATA_UPLOADED);
+            mContext.sendBroadcast(dataUpdatedIntent);
+
         }
         catch (JSONException e)
         {
