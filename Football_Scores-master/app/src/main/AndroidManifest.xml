@@ -35,12 +35,13 @@
                 android:value="barqsoft.footballscores.MainActivity" />
         </activity>
         <service android:name=".service.myFetchService" />
-        <service android:name=".FootballWidgetIntentService" />
+        <service android:name=".FootballRemoteViewsService" android:permission="android.permission.BIND_REMOTEVIEWS" />
 
         <receiver android:name=".FootballAppWidgetProvider" >
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
                 <action android:name="barqsoft.footballscores.app.ACTION_DATA_UPLOADED" />
+                <action android:name="barqsoft.footballscores.app.ACTION_ITEM_CLICKED" />
             </intent-filter>
             <meta-data android:name="android.appwidget.provider"
                 android:resource="@xml/appwidget" />
