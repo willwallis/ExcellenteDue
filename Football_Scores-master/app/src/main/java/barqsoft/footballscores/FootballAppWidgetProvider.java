@@ -1,31 +1,23 @@
 package barqsoft.footballscores;
 
 import android.annotation.TargetApi;
-import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.widget.RemoteViews;
-import android.widget.Toast;
-
-import barqsoft.footballscores.MainActivity;
-import barqsoft.footballscores.R;
 
 /**
  * Created by willwallis on 2/6/16.
  */
 public class FootballAppWidgetProvider extends AppWidgetProvider {
 
-    public static String LOG_TAG = "Widget Provider";
 
     static void updateAppWidget(Context context, AppWidgetManager appWidgetManager,
                                 int appWidgetId) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_main);
-//        views.setTextViewText(R.id.appwidget_text, widgetText);
 
         // Set up the remote adapter based on version
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
