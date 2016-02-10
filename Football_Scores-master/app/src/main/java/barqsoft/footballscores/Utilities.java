@@ -14,7 +14,7 @@ public class Utilities
     {
         switch (league_num)
         {
-            case SERIE_A : return "@string/seriea";
+            case SERIE_A : return "Serie A";
             case PREMIER_LEGAUE : return "Premier League";
             case CHAMPIONS_LEAGUE : return "UEFA Champions League";
             case PRIMERA_DIVISION : return "Primera Division";
